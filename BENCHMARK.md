@@ -19,7 +19,7 @@
 | 7 | Tìm FAQ về Redis | Semantic retrieval | Chung chung | Redis cần flush khi test | ✅ |
 | 8 | Tìm kiến thức Docker networking | Semantic retrieval | Chung chung | Dùng service name thay localhost | ✅ |
 | 9 | Trim khi history dài | Trim/token budget | Không kiểm soát | Sliding window max_turns=10 | ✅ |
-| 10 | Budget limit system prompt | Trim/token budget | Không kiểm soát | Cắt tại 2000 chars | ✅ |
+| 10 | Budget limit system prompt | Trim/token budget | Không kiểm soát | Token budget ≤ 500 tokens | ✅ |
 
 ---
 
