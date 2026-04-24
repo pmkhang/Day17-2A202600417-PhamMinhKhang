@@ -25,6 +25,11 @@ def chat(messages: list[ChatCompletionMessageParam]) -> str:
         f"{base_url}/chat/completions",
         headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
         json={"model": model, "messages": messages, "stream": False},
+        timeout=30,
     )
+    res.raise_for_status()
     data = res.json()
-    return data.get("body", data)["choices"][0]["message"]["content"]
+    choices = data.get("body", data).get("choices")
+    if not choices:
+        raise ValueError(f"Unexpected response format: {data}")
+    return choices[0]["message"]["content"]

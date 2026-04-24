@@ -5,8 +5,9 @@ class ShortTermMemory:
 
     def add(self, role: str, content: str) -> None:
         self._messages.append({"role": role, "content": content})
-        if len(self._messages) > self.max_turns:
-            self._messages = self._messages[-self.max_turns:]
+        # max_turns = number of user-assistant pairs → max_turns * 2 messages
+        if len(self._messages) > self.max_turns * 2:
+            self._messages = self._messages[-(self.max_turns * 2):]
 
     def get(self) -> list[dict]:
         return self._messages
