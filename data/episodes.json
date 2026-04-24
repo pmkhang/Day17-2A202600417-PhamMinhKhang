@@ -1,0 +1,10 @@
+[
+  {
+    "task": "debug",
+    "outcome": "fixed"
+  },
+  {
+    "task": "deploy",
+    "outcome": "success"
+  }
+]
